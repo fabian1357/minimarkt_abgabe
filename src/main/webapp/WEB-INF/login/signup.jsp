@@ -97,7 +97,7 @@
                     
                     
                     
-                    <h1>Kontakdaten</h1>
+                    <h1>Kontaktdaten</h1>
                     
                      <label for="signup_username">
                         Telefonnummer:

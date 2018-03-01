@@ -105,7 +105,7 @@
                                 <c:out value="${task.status.label}"/>
                             </td>
                             <td>
-                                <c:out value=""/>
+                                <c:out value="42"/>
                             </td>
                             <td>
                                 <c:out value="${task.status.label}"/>

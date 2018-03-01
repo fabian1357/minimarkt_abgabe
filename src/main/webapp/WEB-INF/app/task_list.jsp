@@ -99,16 +99,16 @@
                                 <c:out value="${task.category.name}"/>
                             </td>
                              <td>
-                                <c:out value="${task.category.name}"/>
-                            </td>
-                             <td>
-                                <c:out value="${task.category.name}"/>
-                            </td>
-                            <td>
                                 <c:out value="${task.owner.username}"/>
                             </td>
-                            <td>
+                             <td>
                                 <c:out value="${task.status.label}"/>
+                            </td>
+                            <td>
+                                <c:out value="${}"/>
+                            </td>
+                            <td>
+                                <c:out value="${}"/>
                             </td>
                             <td>
                                 <c:out value="${utils.formatDate(task.dueDate)}"/>

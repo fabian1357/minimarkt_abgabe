@@ -57,8 +57,8 @@ public class User implements Serializable {
     private String strasse;
     
     @Column(name = "EMAIL", length = 64)
-    @Size(min = 1, max = 64, message = "Die email darf nicht leer sein.")
-    @NotNull(message = "Die email darf nicht leer sein.")
+    @Size(min = 1, max = 64, message = "Die E-Mail darf nicht leer sein.")
+    @NotNull(message = "Die E-Mail darf nicht leer sein.")
     private String email;
     
        
@@ -72,7 +72,7 @@ public class User implements Serializable {
     
     @Column(name = "TELEFON", length = 64)
     @Size(min = 1, max = 64, message = "Die Telefon darf nicht leer sein.")
-    @NotNull(message = "Die Telefon darf nicht leer sein.")
+    @NotNull(message = "Die Telefonnummer darf nicht leer sein.")
     private String telefon;
     
     public class Password {

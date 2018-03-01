@@ -83,23 +83,17 @@
                         <input type="text" name="signup_strasse" value="${signup_form.values["signup_strasse"][0]}">
                     </div>
 
-                    <label for="signup_plz">
-                        Postleitzahl:
-                        <span class="required">*</span>
-                    </label>
-                    <div class="side-by-side">
-                        <input type="text" name="signup_plz" value="${signup_form.values["signup_plz"][0]}">
-                    </div>
-                    
-                    <label for="signup_ort">
-                        Ort:
+                   <label for="signup_plz">
+                        Postleitzahl und Ort:
                         <span class="required">*</span>
                     </label>
                     <colgroup width="100" span="2"> 
                     <div class="side-by-side">
-                        <col width="50%">
-                            <input type="text" name="signup_ort"value=" ${signup_form.values["signup_ort"][0]}">
-                    </div>
+                        <col width="33%">
+                            <input type="text" name="signup_plz" value="${signup_form.values["signup_plz"][0]}">
+                       <col width ="66%">
+                        <input type="text" name="signup_ort"value=" ${signup_form.values["signup_ort"][0]}">                    
+                     </div>
                     
                     
                     

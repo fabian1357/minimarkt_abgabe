@@ -101,7 +101,7 @@
                     <%-- Button zum Abschicken --%>
                     <div class="side-by-side">
                         <button class="icon-pencil" type="submit">
-                            Registrieren
+                            Speichern
                         </button>
                     </div>
                 </div>

@@ -26,7 +26,7 @@ html {
     color: rgb(83, 91, 94);
 
     background-image: url(../img/background.jpg);
-    background-repeat: repeat;
+    background-attachment:fixed;
     background-position: center center;
     background-size: cover;
 

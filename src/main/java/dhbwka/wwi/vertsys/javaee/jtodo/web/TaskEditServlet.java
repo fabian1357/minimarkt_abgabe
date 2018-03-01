@@ -9,6 +9,8 @@
  */
 package dhbwka.wwi.vertsys.javaee.jtodo.web;
 
+
+
 import dhbwka.wwi.vertsys.javaee.jtodo.ejb.CategoryBean;
 import dhbwka.wwi.vertsys.javaee.jtodo.ejb.TaskBean;
 import dhbwka.wwi.vertsys.javaee.jtodo.ejb.UserBean;
@@ -128,21 +130,20 @@ public class TaskEditServlet extends HttpServlet {
             }
         }
 
-        Date dueDate = WebUtils.parseDate(taskDueDate);
-        Time dueTime = WebUtils.parseTime(taskDueTime);
-
+        //Date dueDate = WebUtils.parseDate(taskDueDate);
+        //Time dueTime = WebUtils.parseTime(taskDueTime);
+/*
         if (dueDate != null) {
             task.setDueDate(dueDate);
         } else {
             errors.add("Das Datum muss dem Format dd.mm.yyyy entsprechen.");
         }
-
         if (dueTime != null) {
             task.setDueTime(dueTime);
         } else {
             errors.add("Die Uhrzeit muss dem Format hh:mm:ss entsprechen.");
         }
-
+*/
         try {
             task.setStatus(TaskStatus.valueOf(taskStatus));
         } catch (IllegalArgumentException ex) {

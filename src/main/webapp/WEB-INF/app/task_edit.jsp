@@ -133,7 +133,7 @@
                     </c:if>
               
                 </div>
-                <c:if test="$(edit)">
+               
                 <label class="side-by-side">
                     Angelegt am:
                     ${task_form.values["task_due_date"][0]}
@@ -146,7 +146,7 @@
                     ${task_form.values["task_owner"][0]}
                     
                 </label>
-                    </c:if>
+                    
                 
 
             <%-- Fehlermeldungen --%>

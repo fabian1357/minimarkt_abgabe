@@ -13,7 +13,9 @@ import dhbwka.wwi.vertsys.javaee.jtodo.ejb.ValidationBean;
 import dhbwka.wwi.vertsys.javaee.jtodo.ejb.UserBean;
 import dhbwka.wwi.vertsys.javaee.jtodo.jpa.User;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,7 +38,13 @@ public class ModifyServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        request.setAttribute("edit", true);
+
+        if (request.getSession().getAttribute("signup_form") == null) {
+            // Keine Formulardaten mit fehlerhaften Daten in der Session,
+            // daher Formulardaten aus dem Datenbankobjekt übernehmen
+            request.setAttribute("signup_form", this.createUserForm());
+}
         // Anfrage an dazugerhörige JSP weiterleiten
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/login/user_edit.jsp");
         dispatcher.forward(request, response);
@@ -100,6 +108,39 @@ public class ModifyServlet extends HttpServlet {
             
             response.sendRedirect(request.getRequestURI());
         }
+    }
+    
+    private FormValues createUserForm() {
+        User currentUser = userBean.getCurrentUser();
+        Map<String, String[]> values = new HashMap<>();
+
+        values.put("signup_username", new String[]{
+            currentUser.getUsername()
+        });
+
+        values.put("signup_name", new String[]{currentUser.getName() 
+        });
+
+        values.put("signup_strasse", new String[]{currentUser.getStrasse()
+        });
+
+        values.put("signup_plz", new String[]{currentUser.getPlz()
+        });
+
+        values.put("signup_ort", new String[]{currentUser.getOrt()
+        });
+
+        values.put("signup_telefonnummer", new String[]{currentUser.getTelefon()
+        });
+        
+        values.put("signup_email", new String[]{currentUser.getEmail()
+        });
+
+        
+
+        FormValues formValues = new FormValues();
+        formValues.setValues(values);
+        return formValues;
     }
     
 }

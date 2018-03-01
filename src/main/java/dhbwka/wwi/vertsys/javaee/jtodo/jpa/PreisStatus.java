@@ -11,7 +11,7 @@ package dhbwka.wwi.vertsys.javaee.jtodo.jpa;
 
 
 public enum PreisStatus {
-    OPEN, FINISHED;
+    VHB, FESTPREIS;
 
     /**
      * Bezeichnung ermitteln
@@ -20,10 +20,10 @@ public enum PreisStatus {
      */
     public String getLabel() {
         switch (this) {
-            case OPEN:
+            case VHB:
                 return "VHB";
             
-            case FINISHED:
+            case FESTPREIS:
                 return "Festpreis";
             
             default:

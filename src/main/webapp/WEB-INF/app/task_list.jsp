@@ -105,10 +105,10 @@
                                 <c:out value="${task.status.label}"/>
                             </td>
                             <td>
-                                <c:out value="${}"/>
+                                <c:out value="${task.owner.username}"/>
                             </td>
                             <td>
-                                <c:out value="${}"/>
+                                <c:out value="${task.status.label}"/>
                             </td>
                             <td>
                                 <c:out value="${utils.formatDate(task.dueDate)}"/>

@@ -37,18 +37,20 @@
                     <%-- CSRF-Token C --%>
                     <input type="hidden" name="csrf_token" value="${csrf_token}">
 
-                    <h1>Benutzername ändern</h1>
+                   
                     
                     <%-- Eingabefelder --%>
+                    <h1>Benutzername</h1>
                     <label for="signup_username">
-                        Benutzername:
-                        <span class="required">*</span>
+                        
                     </label>
                     <div class="side-by-side">
                         <input type="text" name="signup_username" value="${signup_form.values["signup_username"][0]}">
                     </div>                  
                     
-                    <h1>Anschrift</h1>
+                     <h1>Daten ändern</h1>
+                    
+                    <h2>Anschrift</h2>
                     
                     <label for="signup_name">
                         Vor- und Nachname:
@@ -78,7 +80,7 @@
                         <input type="text" name="signup_ort"value=" ${signup_form.values["signup_ort"][0]}">                    
                      </div>
                     
-                    <h1>Kontaktdaten</h1>
+                    <h2>Kontaktdaten</h2>
                     
                      <label for="signup_telefonnummer">
                         Telefonnummer:

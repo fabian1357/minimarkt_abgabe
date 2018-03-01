@@ -52,7 +52,7 @@ public class UserBean {
 
         User user = new User(username, password, name,  strasse, plz, ort , telefon, email );
        
-        user.addToGroup("todo-app-user");
+        user.addToGroup("minimarkt-app-user");
         em.persist(user);
     }
 
@@ -63,7 +63,7 @@ public class UserBean {
      * @param newPassword
      * @throws UserBean.InvalidCredentialsException
      */
-    @RolesAllowed("todo-app-user")
+    @RolesAllowed("minimarkt-app-user")
     public void changePassword(User user, String oldPassword, String newPassword) throws InvalidCredentialsException {
         if (user == null || !user.checkPassword(oldPassword)) {
             throw new InvalidCredentialsException("Benutzername oder Passwort sind falsch.");
@@ -76,7 +76,7 @@ public class UserBean {
      * Benutzer löschen
      * @param user Zu löschender Benutzer
      */
-    @RolesAllowed("todo-app-user")
+    @RolesAllowed("minimarkt-app-user")
     public void delete(User user) {
         this.em.remove(user);
     }
@@ -86,7 +86,7 @@ public class UserBean {
      * @param user Zu aktualisierender Benutzer
      * @return Gespeicherter Benutzer
      */
-    @RolesAllowed("todo-app-user")
+    @RolesAllowed("minimarkt-app-user")
     public User update(User user) {
         return em.merge(user);
     }

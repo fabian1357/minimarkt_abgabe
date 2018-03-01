@@ -119,7 +119,7 @@ public class TaskEditServlet extends HttpServlet {
         String taskStatus = request.getParameter("task_status");
         String taskShortText = request.getParameter("task_short_text");
         String taskLongText = request.getParameter("task_long_text");
-        String taskPreis = request.getParameter("preis");
+        //String taskPreis = request.getParameter("task_preis");
 
         Task task = this.getRequestedTask(request);
 
@@ -130,32 +130,20 @@ public class TaskEditServlet extends HttpServlet {
                 // Ungültige oder keine ID mitgegeben
             }
         }
-
-        //Date dueDate = WebUtils.parseDate(taskDueDate);
-        //Time dueTime = WebUtils.parseTime(taskDueTime);
-/*
-        if (dueDate != null) {
-            task.setDueDate(dueDate);
-        } else {
-            errors.add("Das Datum muss dem Format dd.mm.yyyy entsprechen.");
-        }
-        if (dueTime != null) {
-            task.setDueTime(dueTime);
-        } else {
-            errors.add("Die Uhrzeit muss dem Format hh:mm:ss entsprechen.");
-        }
-*/
+        
         try {
             task.setStatus(TaskStatus.valueOf(taskStatus));
         } catch (IllegalArgumentException ex) {
             errors.add("Der ausgewählte Status ist nicht vorhanden.");
         }
         
+        /* VHB und Festpreis DropDown Liste sollte realisiert werden
+        
         try {
-            task.setStatus(TaskStatus.valueOf(taskPreis));
+            task.setStatus(PreisArten.valueOf(taskPreis));
         } catch (IllegalArgumentException ex) {
             errors.add("Der ausgewählte Status ist nicht vorhanden.");
-        }
+        }*/
 
         task.setShortText(taskShortText);
         task.setLongText(taskLongText);
@@ -211,6 +199,7 @@ public class TaskEditServlet extends HttpServlet {
      * @param request HTTP-Anfrage
      * @return Zu bearbeitende Aufgabe
      */
+    
     private Task getRequestedTask(HttpServletRequest request) {
         // Zunächst davon ausgehen, dass ein neuer Satz angelegt werden soll
         Task task = new Task();
@@ -251,6 +240,7 @@ public class TaskEditServlet extends HttpServlet {
      * @param task Die zu bearbeitende Aufgabe
      * @return Neues, gefülltes FormValues-Objekt
      */
+    
     private FormValues createTaskForm(Task task) {
         Map<String, String[]> values = new HashMap<>();
 
@@ -282,10 +272,6 @@ public class TaskEditServlet extends HttpServlet {
 
         values.put("task_long_text", new String[]{
             task.getLongText()
-        });
-        
-        values.put("preis", new String[]{
-            task.getStatus().toString()
         });
 
         FormValues formValues = new FormValues();

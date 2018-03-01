@@ -84,10 +84,7 @@ public class User implements Serializable {
 
     @Column(name = "PASSWORD_HASH", length = 64)
     @NotNull(message = "Das Passwort darf nicht leer sein.")
-    private String passwordHash;
-
-
-     
+    private String passwordHash;     
      
     @ElementCollection
     @CollectionTable(

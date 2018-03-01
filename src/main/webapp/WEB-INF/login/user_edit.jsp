@@ -35,11 +35,10 @@
             <form method="post" class="stacked">
                 <div class="column">
                     <%-- CSRF-Token C --%>
-                    <input type="hidden" name="csrf_token" value="${csrf_token}">
-
-                   
+                    <input type="hidden" name="csrf_token" value="${csrf_token}">                
                     
                     <%-- Eingabefelder --%>
+                    
                     <h1>Benutzername</h1>
                     <label for="signup_username">
                         
@@ -101,6 +100,7 @@
                     
                     
                     <%-- Button zum Abschicken --%>
+                    
                     <div class="side-by-side">
                         <button class="icon-pencil" type="submit">
                             Speichern
@@ -109,11 +109,12 @@
                 </div>
 
                 <%-- Fehlermeldungen --%>
+                
                 <c:if test="${!empty signup_form.errors}">
                     <ul class="errors">
                         <c:forEach items="${signup_form.errors}" var="error">
                             <li>${error}</li>
-                            </c:forEach>
+                        </c:forEach>
                     </ul>
                 </c:if>
             </form>

@@ -63,9 +63,10 @@ public class Task implements Serializable {
     @NotNull
     private TaskStatus status = TaskStatus.BIETE;
     
-    /*@Enumerated(EnumType.STRING)
+    /* Wir hatten ursprünglich die Absicht VHB und Festpreis wie TaskStatus aufzubauen
+    @Enumerated(EnumType.STRING) 
     @NotNull
-    private PreisStatus preisstatus = PreisStatus.VHB;*/
+    private PreisArten preisarten = PreisArten.VHB;*/
 
     //<editor-fold defaultstate="collapsed" desc="Konstruktoren">
     public Task() {

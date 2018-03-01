@@ -34,7 +34,7 @@ import javax.validation.constraints.Size;
  * Datenbankklasse für einen Benutzer.
  */
 @Entity
-@Table(name = "JTODO_USER")
+@Table(name = "MINIMARKT_USER")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -91,7 +91,7 @@ public class User implements Serializable {
      
     @ElementCollection
     @CollectionTable(
-            name = "JTODO_USER_GROUP",
+            name = "MINIMARKT_USER_GROUP",
             joinColumns = @JoinColumn(name = "USERNAME")
     )
     @Column(name = "GROUPNAME")

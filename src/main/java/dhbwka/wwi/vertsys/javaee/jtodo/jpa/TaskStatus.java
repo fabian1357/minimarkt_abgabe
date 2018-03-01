@@ -13,7 +13,7 @@ package dhbwka.wwi.vertsys.javaee.jtodo.jpa;
  * Statuswerte einer Aufgabe.
  */
 public enum TaskStatus {
-    OPEN, IN_PROGRESS, FINISHED, CANCELED, POSTPONED;
+    BIETE, SUCHE;
 
     /**
      * Bezeichnung ermitteln
@@ -22,10 +22,10 @@ public enum TaskStatus {
      */
         public String getLabel() {
         switch (this) {
-            case OPEN:
+            case BIETE:
                 return "Biete";
             
-            case FINISHED:
+            case SUCHE:
                 return "Suche";
             
             default:

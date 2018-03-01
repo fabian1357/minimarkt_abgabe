@@ -105,9 +105,9 @@
                 <div class="side-by-side margin">
                     <col width="50%">
                     <select name="preis">
-                        <c:forEach items="${values}" var="status">
-                            <option value="${value}" ${task_form.values["preis"][0] == value ? 'selected' : ''}>
-                                <c:out value="${value.label}"/>
+                        <c:forEach items="${statuses}" var="status">
+                            <option value="${status}" ${task_form.values["task_status"][0] == status ? 'selected' : ''}>
+                                <c:out value="${status.label}"/>
                             </option>
                         </c:forEach>
                     </select>

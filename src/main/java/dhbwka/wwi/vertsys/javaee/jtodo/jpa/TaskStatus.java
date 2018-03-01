@@ -13,7 +13,7 @@ package dhbwka.wwi.vertsys.javaee.jtodo.jpa;
  * Statuswerte einer Aufgabe.
  */
 public enum TaskStatus {
-    BIETE, SUCHE;
+    BIETE, SUCHE, VHB, FESTPREIS;
 
     /**
      * Bezeichnung ermitteln
@@ -23,10 +23,16 @@ public enum TaskStatus {
         public String getLabel() {
         switch (this) {
             case BIETE:
-                return "Biete";
+                return "Biete (Art des Angebots)";
             
             case SUCHE:
-                return "Suche";
+                return "Suche (Art des Angebots)";
+                
+             case VHB:
+                return "VHB (Preis)";
+            
+            case FESTPREIS:
+                return "Festpreis (Preis)";
             
             default:
                 return this.toString();

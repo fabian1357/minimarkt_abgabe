@@ -119,6 +119,7 @@ public class TaskEditServlet extends HttpServlet {
         String taskStatus = request.getParameter("task_status");
         String taskShortText = request.getParameter("task_short_text");
         String taskLongText = request.getParameter("task_long_text");
+        String taskPreis = request.getParameter("preis");
 
         Task task = this.getRequestedTask(request);
 
@@ -146,6 +147,12 @@ public class TaskEditServlet extends HttpServlet {
 */
         try {
             task.setStatus(TaskStatus.valueOf(taskStatus));
+        } catch (IllegalArgumentException ex) {
+            errors.add("Der ausgewählte Status ist nicht vorhanden.");
+        }
+        
+        try {
+            task.setStatus(TaskStatus.valueOf(taskPreis));
         } catch (IllegalArgumentException ex) {
             errors.add("Der ausgewählte Status ist nicht vorhanden.");
         }
@@ -275,6 +282,10 @@ public class TaskEditServlet extends HttpServlet {
 
         values.put("task_long_text", new String[]{
             task.getLongText()
+        });
+        
+        values.put("preis", new String[]{
+            task.getStatus().toString()
         });
 
         FormValues formValues = new FormValues();
